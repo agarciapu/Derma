@@ -6,18 +6,25 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
-
+import android.widget.EditText
 class MainActivity : AppCompatActivity() {
+
+    // Declarar los EditText
+    private lateinit var usuarioEditText: EditText
+    private lateinit var contraseniaEditText: EditText
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         val ingresarButton: Button = findViewById(R.id.buttonIngresar)
         ingresarButton.setOnClickListener(View.OnClickListener {
-            var usuarioEditText = findViewById(R.id.idUsuario)
-            val usuario: String = usuarioEditText.text.toString()
 
-            var contraseniaEditText = findViewById(R.id.idContrasenia)
+            
+            usuarioEditText = findViewById(R.id.idUsuario)
+            contraseniaEditText = findViewById(R.id.idContrasenia)
+
+            val usuario: String = usuarioEditText.text.toString()
             val contrasenia: String = contraseniaEditText.text.toString()
 
             if (usuario == "73321272" && contrasenia == "1234") {
